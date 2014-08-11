@@ -1,4 +1,4 @@
-module ApplicationService
+module Helpstation
   class Observer
     include AbstractType
 

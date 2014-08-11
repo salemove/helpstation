@@ -1,4 +1,4 @@
-module ApplicationService
+module Helpstation
   class Evaluator
     include AbstractType
 

@@ -1,13 +1,13 @@
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'application_service/version'
+require 'helpstation/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'application_service'
-  spec.version       = ApplicationService::VERSION
+  spec.name          = 'helpstation'
+  spec.version       = Helpstation::VERSION
   spec.authors       = ['Indrek Juhkam']
   spec.email         = ['indrek@salemove.com']
-  spec.description   = %q{Helps to unify SaleMove application services}
+  spec.description   = %q{Helps to unify SaleMove services}
   spec.summary       = %q{}
   spec.homepage      = ''
   spec.license       = 'MIT'

@@ -1,12 +1,12 @@
-# ApplicationService
+# Helpstation
 
-Helps to unify SaleMove application services
+Helps to unify SaleMove services
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
-    gem 'application_service', git: 'https://github.com/salemove/application_service.git'
+    gem 'helpstation'
 
 And then execute:
 
@@ -18,16 +18,16 @@ TODO: Write proper usage instructions here
 
 Example:
 ```ruby
-require 'application_service'
+require 'helpstation'
 
-class PersonFinder < ApplicationService::Process
+class PersonFinder < Helpstation::Process
   def call
     person = env.db.find_person(input.fetch(:person_id))
     success(input.merge(person: person))
   end
 end
 
-class ExportReadinessChecker < ApplicationService::Process
+class ExportReadinessChecker < Helpstation::Process
   def call
     person = input.fetch(:person)
     if SomeClassThatChecksPersonExportReadiness.check?(person)
@@ -38,20 +38,20 @@ class ExportReadinessChecker < ApplicationService::Process
   end
 end
 
-class PersonExporter < ApplicationService::Action
+class PersonExporter < Helpstation::Action
   def call
     # ... export ...
     success
   end
 end
 
-class ExportEmailNotifier < ApplicationService::Observer
+class ExportEmailNotifier < Helpstation::Observer
   def call
     mailer.deliver('...') if success?
   end
 end
 
-substation = ApplicationService.build_substation(env)
+substation = Helpstation.build_substation(env)
 substation.register(:export) do
   process PersonFinder
   process ExportReadinessChecker

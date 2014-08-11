@@ -1,4 +1,4 @@
-module ApplicationService
+module Helpstation
   class LegacyProcess
     def self.call(request)
       result = process(request.env, request.input)

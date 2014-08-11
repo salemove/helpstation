@@ -1,4 +1,4 @@
-module ApplicationService
+module Helpstation
   class Action < Evaluator
     def success(data)
       @request.success({success: true}.merge(data))

@@ -57,7 +57,15 @@ substation.register(:export) do
   process ExportReadinessChecker
   call PersonExporter, Substation::Chain::EMPTY, ExportEmailNotifier
 end
-substation.call(:export, {person_id: 5})
+
+response = substation.call(:export, {person_id: 5})
+if response.success?
+  puts 'Everything went fine'
+  do_something_with response.output
+else
+  puts 'Got error'
+end
+
 ```
 
 ## Contributing

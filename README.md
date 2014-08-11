@@ -6,7 +6,7 @@ Helps to unify SaleMove application services
 
 Add this line to your application's Gemfile:
 
-    gem 'application_service'
+    gem 'application_service', git: 'https://github.com/salemove/application_service.git'
 
 And then execute:
 

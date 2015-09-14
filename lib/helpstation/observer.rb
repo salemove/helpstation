@@ -32,4 +32,28 @@ module Helpstation
       @response.success?
     end
   end
+
+  class SuccessObserver < Observer
+    # Perform the observer when the response is successful
+    #
+    # @param [Substation::Response]
+    #   the response returned when calling the action
+    #
+    # @api private
+    def self.call(response)
+      super if response.success?
+    end
+  end
+
+  class ErrorObserver < Observer
+    # Perform the observer when the response is not successful
+    #
+    # @param [Substation::Response]
+    #   the response returned when calling the action
+    #
+    # @api private
+    def self.call(response)
+      super if !response.success?
+    end
+  end
 end

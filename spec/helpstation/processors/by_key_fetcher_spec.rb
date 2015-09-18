@@ -9,6 +9,8 @@ describe Helpstation::Fetchers::ByKeyFetcher do
     end
   }
 
+  let(:env) { { mock_service: :mock_value } }
+
   let(:input_key) { :my_input }
   let(:output_key) { :my_output }
   let(:output) { "putting out" }
@@ -22,7 +24,7 @@ describe Helpstation::Fetchers::ByKeyFetcher do
       expect(subject).to be_a(Substation::Response::Success)
       expect(subject.output).to eq(
         my_input: input[:my_input],
-        my_output: "input_key and #{env}"
+        my_output: "input_key and {:mock_service=>:mock_value}"
       )
     end
   end

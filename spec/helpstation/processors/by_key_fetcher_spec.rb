@@ -4,8 +4,8 @@ describe Helpstation::Fetchers::ByKeyFetcher do
   subject { processor.call request }
 
   let(:processor) {
-    described_class.build(input_key, output_key) do
-      output
+    described_class.build(input_key, output_key) do |key, env|
+      "#{key} and #{env}"
     end
   }
 
@@ -16,13 +16,13 @@ describe Helpstation::Fetchers::ByKeyFetcher do
   let(:request)   { Substation::Request.new('my_request', env, input) }
 
   context 'when input_key is present' do
-    let(:input) { { my_input: 'test' } }
+    let(:input) { { my_input: 'input_key' } }
 
     it 'returns correct output' do
       expect(subject).to be_a(Substation::Response::Success)
       expect(subject.output).to eq(
         my_input: input[:my_input],
-        my_output: output
+        my_output: "input_key and #{env}"
       )
     end
   end

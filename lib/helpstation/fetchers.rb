@@ -12,7 +12,7 @@ module Helpstation
             output_key
           end
           define_method :fetch do |input_value|
-            block.call input_value
+            block.call input_value, env
           end
         end
       end

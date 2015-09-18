@@ -12,7 +12,7 @@ RSpec.configure do |config|
   config.filter_run :focus
   config.order = 'random'
 
-  def env(opts={})
-    @_env ||= {}
+  def env
+    @_env ||= { mock_service: :mock_value }
   end
 end

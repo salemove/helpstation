@@ -4,3 +4,4 @@ rvm:
 before_script:
   - bundle
 script: bundle exec rspec
+sudo: false

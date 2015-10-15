@@ -29,8 +29,8 @@ module Helpstation
     attr_reader :env
     attr_reader :input
 
-    def error(data)
-      @request.error(success: false, error: data)
+    def error(error, extra = {})
+      @request.error({success: false, error: error}.merge(extra))
     end
   end
 end

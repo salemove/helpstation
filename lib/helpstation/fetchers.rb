@@ -29,10 +29,10 @@ module Helpstation
     end
 
     class ActiveRecordFetcher < ByKeyFetcher
-      def self.build(*)
+      def call
         super
-      rescue ActiveRecord::NotFoundError
-        raise NotFoundError
+      rescue ActiveRecord::RecordNotFound
+        error("#{Inflecto.humanize(output_key)} ##{input[input_key]} not found")
       end
     end
   end

@@ -18,4 +18,5 @@ Gem::Specification.new do |spec|
   spec.require_paths = ['lib']
 
   spec.add_dependency 'substation', '~> 0.0', '>= 0.0.10'
+  spec.add_dependency 'inflecto', '~> 0.0.2'
 end

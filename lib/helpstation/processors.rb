@@ -43,5 +43,41 @@ module Helpstation
         input.merge(result.output)
       end
     end
+
+    # Helps to run one chain or another depending on a request
+    #
+    # @example
+    #   success_chain = substation.chain do
+    #     # success action
+    #   end
+    #
+    #   fallback_chain = substation.chain do
+    #     # fallback action
+    #   end
+    #
+    #   process ConditionalProcessor[
+    #     -> (request) { request.input.has_key?(:optional_key) },
+    #     success_chain,
+    #     fallback_chain
+    #   ]
+    #
+    class ConditionalProcessor < Processor
+      def self.[](condition, success_chain, fallback_chain)
+        Proc.new do |request|
+          result =
+            if condition.call(request)
+              success_chain.call(request)
+            else
+              fallback_chain.call(request)
+            end
+
+          if result.is_a?(Substation::Response)
+            result
+          else
+            request.success(result.input)
+          end
+        end
+      end
+    end
   end
 end

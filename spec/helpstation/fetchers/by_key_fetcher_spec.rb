@@ -5,7 +5,7 @@ describe Helpstation::Fetchers::ByKeyFetcher do
 
   let(:processor) {
     described_class.build(input_key, output_key) do |key, env|
-      "#{key} and #{env}"
+      "#{key} and #{env.fetch(:mock_service)}"
     end
   }
 
@@ -24,7 +24,7 @@ describe Helpstation::Fetchers::ByKeyFetcher do
       expect(subject).to be_a(Substation::Response::Success)
       expect(subject.output).to eq(
         my_input: input[:my_input],
-        my_output: "input_key and {:mock_service=>:mock_value}"
+        my_output: "input_key and mock_value"
       )
     end
   end

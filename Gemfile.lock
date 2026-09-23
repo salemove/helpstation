@@ -23,31 +23,17 @@ GEM
     adamantium (0.2.0)
       ice_nine (~> 0.11.0)
       memoizable (~> 0.4.0)
-    byebug (13.0.0)
-      reline (>= 0.6.0)
-    coderay (1.1.3)
     concord (0.1.6)
       adamantium (~> 0.2.0)
       equalizer (~> 0.0.9)
     diff-lcs (1.6.2)
     equalizer (0.0.11)
     ice_nine (0.11.2)
-    io-console (0.9.4)
     lupo (0.0.1)
       concord (~> 0.1.4)
     memoizable (0.4.2)
       thread_safe (~> 0.3, >= 0.3.1)
-    method_source (1.1.0)
-    pry (0.16.0)
-      coderay (~> 1.1)
-      method_source (~> 1.0)
-      reline (>= 0.6.0)
-    pry-byebug (3.12.0)
-      byebug (~> 13.0)
-      pry (>= 0.13, < 0.17)
     rake (13.4.2)
-    reline (0.7.0)
-      io-console (~> 0.5)
     rspec (3.13.2)
       rspec-core (~> 3.13.0)
       rspec-expectations (~> 3.13.0)
@@ -68,7 +54,6 @@ PLATFORMS
 
 DEPENDENCIES
   helpstation!
-  pry-byebug
   rake
   rspec
   substation!
@@ -76,21 +61,14 @@ DEPENDENCIES
 CHECKSUMS
   abstract_type (0.0.7) sha256=24b82b68ccd2f5126d517bb68747858d99ad057aff27d9a0ab5cb00c2b036324
   adamantium (0.2.0) sha256=5379dc1090ec6ce115eaed4271a2056f3b72ee94d1ff866a169bbb37a3c8c504
-  byebug (13.0.0) sha256=d2263efe751941ca520fa29744b71972d39cbc41839496706f5d9b22e92ae05d
-  coderay (1.1.3) sha256=dc530018a4684512f8f38143cd2a096c9f02a1fc2459edcfe534787a7fc77d4b
   concord (0.1.6) sha256=184e9c146579ad5fc5d663c95dea3f6d1640b00d24e5e7248ffcfcd1d8f7f6ef
   diff-lcs (1.6.2) sha256=9ae0d2cba7d4df3075fe8cd8602a8604993efc0dfa934cff568969efb1909962
   equalizer (0.0.11) sha256=44e5bc46f49883e83d159ee9b1f7320b4ae8283bb6329e5d9716f5e7dde855ce
   helpstation (0.1.7)
   ice_nine (0.11.2) sha256=5d506a7d2723d5592dc121b9928e4931742730131f22a1a37649df1c1e2e63db
-  io-console (0.9.4) sha256=a403304f32928ee85e56d457b4612ca43f2703b561a3258844992bd24085fbb1
   lupo (0.0.1) sha256=4b6380ee0b42e12b9d444e3d9dbf44dbe33710b24b00d4415a008edac46b4eb8
   memoizable (0.4.2) sha256=acf4d2280fea019318e61cfc5e69077dcb3c2126817ee596ffd76d0ddf5e826c
-  method_source (1.1.0) sha256=181301c9c45b731b4769bc81e8860e72f9161ad7d66dd99103c9ab84f560f5c5
-  pry (0.16.0) sha256=d76c69065698ed1f85e717bd33d7942c38a50868f6b0673c636192b3d1b6054e
-  pry-byebug (3.12.0) sha256=594e094ae8a8390a7ad4c7b36ae36e13304ed02664c67417d108dc5f7213d1b7
   rake (13.4.2) sha256=cb825b2bd5f1f8e91ca37bddb4b9aaf345551b4731da62949be002fa89283701
-  reline (0.7.0) sha256=5b012d8e55dbf9d450f12bde2cf7d15ff546ae80b3f8f3b30e570d431815583d
   rspec (3.13.2) sha256=206284a08ad798e61f86d7ca3e376718d52c0bc944626b2349266f239f820587
   rspec-core (3.13.6) sha256=a8823c6411667b60a8bca135364351dda34cd55e44ff94c4be4633b37d828b2d
   rspec-expectations (3.13.5) sha256=33a4d3a1d95060aea4c94e9f237030a8f9eae5615e9bd85718fe3a09e4b58836

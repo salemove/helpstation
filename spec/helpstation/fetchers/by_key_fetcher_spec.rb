@@ -40,4 +40,21 @@ describe Helpstation::Fetchers::ByKeyFetcher do
       )
     end
   end
+
+  context 'when the fetch raises NotFoundError' do
+    let(:processor) {
+      described_class.build(input_key, :person_id) do |key, env|
+        raise Helpstation::Fetchers::NotFoundError
+      end
+    }
+    let(:input) { { my_input: 'input_key' } }
+
+    it 'returns an error naming the output key without its _id suffix' do
+      expect(subject).to be_a(Substation::Response::Failure)
+      expect(subject.output).to eq(
+        success: false,
+        error: "Person #input_key not found"
+      )
+    end
+  end
 end

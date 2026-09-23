@@ -1,5 +1,4 @@
 require 'substation'
-require 'inflecto'
 
 require_relative 'helpstation/version'
 require_relative 'helpstation/evaluator'

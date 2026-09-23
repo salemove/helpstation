@@ -24,7 +24,13 @@ module Helpstation
           error("#{input_key} must be present")
         end
       rescue NotFoundError
-        error("#{Inflecto.humanize(output_key)} ##{input_value} not found")
+        error("#{humanized_output_key} ##{input_value} not found")
+      end
+
+      private
+
+      def humanized_output_key
+        output_key.to_s.delete_suffix('_id').tr('_', ' ').capitalize
       end
     end
 
@@ -32,7 +38,7 @@ module Helpstation
       def call
         super
       rescue ActiveRecord::RecordNotFound
-        error("#{Inflecto.humanize(output_key)} ##{input[input_key]} not found")
+        error("#{humanized_output_key} ##{input[input_key]} not found")
       end
     end
   end

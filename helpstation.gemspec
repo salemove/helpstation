@@ -11,6 +11,7 @@ Gem::Specification.new do |spec|
   spec.summary       = %q{}
   spec.homepage      = ''
   spec.license       = 'MIT'
+  spec.required_ruby_version = '>= 3.3'
 
   spec.files         = `git ls-files`.split($/)
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
@@ -18,5 +19,4 @@ Gem::Specification.new do |spec|
   spec.require_paths = ['lib']
 
   spec.add_dependency 'substation', '~> 0.0', '>= 0.0.10'
-  spec.add_dependency 'inflecto', '~> 0.0.2'
 end

@@ -1,0 +1,81 @@
+GIT
+  remote: https://github.com/snusnu/substation.git
+  revision: fabf062a3640f5e82dae68597f0709b63f6b9027
+  ref: fabf062
+  specs:
+    substation (0.0.11)
+      abstract_type (~> 0.0, >= 0.0.7)
+      adamantium (~> 0.2, >= 0.2.0)
+      concord (~> 0.1, >= 0.1.5)
+      equalizer (~> 0.0, >= 0.0.9)
+      lupo (~> 0.0, >= 0.0.1)
+
+PATH
+  remote: .
+  specs:
+    helpstation (0.2.0)
+      substation (~> 0.0, >= 0.0.10)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    abstract_type (0.0.7)
+    adamantium (0.2.0)
+      ice_nine (~> 0.11.0)
+      memoizable (~> 0.4.0)
+    concord (0.1.6)
+      adamantium (~> 0.2.0)
+      equalizer (~> 0.0.9)
+    diff-lcs (1.6.2)
+    equalizer (0.0.11)
+    ice_nine (0.11.2)
+    lupo (0.0.1)
+      concord (~> 0.1.4)
+    memoizable (0.4.2)
+      thread_safe (~> 0.3, >= 0.3.1)
+    rake (13.4.2)
+    rspec (3.13.2)
+      rspec-core (~> 3.13.0)
+      rspec-expectations (~> 3.13.0)
+      rspec-mocks (~> 3.13.0)
+    rspec-core (3.13.6)
+      rspec-support (~> 3.13.0)
+    rspec-expectations (3.13.5)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.13.0)
+    rspec-mocks (3.13.8)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.13.0)
+    rspec-support (3.13.7)
+    thread_safe (0.3.6)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  helpstation!
+  rake
+  rspec
+  substation!
+
+CHECKSUMS
+  abstract_type (0.0.7) sha256=24b82b68ccd2f5126d517bb68747858d99ad057aff27d9a0ab5cb00c2b036324
+  adamantium (0.2.0) sha256=5379dc1090ec6ce115eaed4271a2056f3b72ee94d1ff866a169bbb37a3c8c504
+  concord (0.1.6) sha256=184e9c146579ad5fc5d663c95dea3f6d1640b00d24e5e7248ffcfcd1d8f7f6ef
+  diff-lcs (1.6.2) sha256=9ae0d2cba7d4df3075fe8cd8602a8604993efc0dfa934cff568969efb1909962
+  equalizer (0.0.11) sha256=44e5bc46f49883e83d159ee9b1f7320b4ae8283bb6329e5d9716f5e7dde855ce
+  helpstation (0.2.0)
+  ice_nine (0.11.2) sha256=5d506a7d2723d5592dc121b9928e4931742730131f22a1a37649df1c1e2e63db
+  lupo (0.0.1) sha256=4b6380ee0b42e12b9d444e3d9dbf44dbe33710b24b00d4415a008edac46b4eb8
+  memoizable (0.4.2) sha256=acf4d2280fea019318e61cfc5e69077dcb3c2126817ee596ffd76d0ddf5e826c
+  rake (13.4.2) sha256=cb825b2bd5f1f8e91ca37bddb4b9aaf345551b4731da62949be002fa89283701
+  rspec (3.13.2) sha256=206284a08ad798e61f86d7ca3e376718d52c0bc944626b2349266f239f820587
+  rspec-core (3.13.6) sha256=a8823c6411667b60a8bca135364351dda34cd55e44ff94c4be4633b37d828b2d
+  rspec-expectations (3.13.5) sha256=33a4d3a1d95060aea4c94e9f237030a8f9eae5615e9bd85718fe3a09e4b58836
+  rspec-mocks (3.13.8) sha256=086ad3d3d17533f4237643de0b5c42f04b66348c28bf6b9c2d3f4a3b01af1d47
+  rspec-support (3.13.7) sha256=0640e5570872aafefd79867901deeeeb40b0c9875a36b983d85f54fb7381c47c
+  substation (0.0.11)
+  thread_safe (0.3.6) sha256=9ed7072821b51c57e8d6b7011a8e282e25aeea3a4065eab326e43f66f063b05a
+
+BUNDLED WITH
+   2.6.9

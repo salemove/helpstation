@@ -5,7 +5,7 @@ describe Helpstation::Fetchers::ByKeyFetcher do
 
   let(:processor) {
     described_class.build(input_key, output_key) do |key, env|
-      "#{key} and #{env}"
+      "#{key} and #{env.fetch(:mock_service)}"
     end
   }
 
@@ -24,7 +24,7 @@ describe Helpstation::Fetchers::ByKeyFetcher do
       expect(subject).to be_a(Substation::Response::Success)
       expect(subject.output).to eq(
         my_input: input[:my_input],
-        my_output: "input_key and {:mock_service=>:mock_value}"
+        my_output: "input_key and mock_value"
       )
     end
   end
@@ -37,6 +37,23 @@ describe Helpstation::Fetchers::ByKeyFetcher do
       expect(subject.output).to eq(
         success: false,
         error: "#{input_key} must be present"
+      )
+    end
+  end
+
+  context 'when the fetch raises NotFoundError' do
+    let(:processor) {
+      described_class.build(input_key, :person_id) do |key, env|
+        raise Helpstation::Fetchers::NotFoundError
+      end
+    }
+    let(:input) { { my_input: 'input_key' } }
+
+    it 'returns an error naming the output key without its _id suffix' do
+      expect(subject).to be_a(Substation::Response::Failure)
+      expect(subject.output).to eq(
+        success: false,
+        error: "Person #input_key not found"
       )
     end
   end
